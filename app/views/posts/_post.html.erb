@@ -1,12 +1,12 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
 
-  <p>
-    <strong>Body:</strong>
+
+<div class="post">
+    <%= link_to post.title, post_path(post) %>
+
     <%= post.body %>
-  </p>
 
+    <div class="post__actions">
+      <%= button_to "Delete", post_path(post), method: :delete, data: {turbo_frame: "_top"}, class: "btn btn--light" %>
+      <%= link_to "Edit", edit_post_path(post), class: "btn btn--light" %>
+    </div>
 </div>
